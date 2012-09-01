@@ -20,25 +20,24 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table wgnzv_banner_menu
+# Dump of table #__banner_menu
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `wgnzv_banner_menu`;
+DROP TABLE IF EXISTS `#__banner_menu`;
 
-CREATE TABLE `wgnzv_banner_menu` (
-  `bannerid` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `menuid` int(11) NOT NULL,
-  PRIMARY KEY (`bannerid`)
+CREATE TABLE `#__banner_menu` (
+  `bannerid` int(11) NOT NULL DEFAULT '0',
+  `menuid` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`bannerid`,`menuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
-# Dump of table wgnzv_banner_positions
+# Dump of table #__banner_positions
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `wgnzv_banner_positions`;
+DROP TABLE IF EXISTS `#__banner_positions`;
 
-CREATE TABLE `wgnzv_banner_positions` (
+CREATE TABLE `#__banner_positions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   `state` tinyint(3) NOT NULL DEFAULT '0',
@@ -61,16 +60,6 @@ CREATE TABLE `wgnzv_banner_positions` (
   KEY `idx_state` (`state`),
   KEY `idx_language` (`language`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `wgnzv_banner_positions` WRITE;
-/*!40000 ALTER TABLE `wgnzv_banner_positions` DISABLE KEYS */;
-
-INSERT INTO `wgnzv_banner_positions` (`id`, `name`, `state`, `description`, `ordering`, `params`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `reset`, `created`, `language`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `version`)
-VALUES
-	(1,'Topo',1,'',0,'',0,'0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00','*',0,'','0000-00-00 00:00:00',0,1);
-
-/*!40000 ALTER TABLE `wgnzv_banner_positions` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 
